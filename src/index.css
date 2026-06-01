@@ -1,0 +1,472 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-wine-50: #fbf3f5;
+  --color-wine-100: #f7e4e8;
+  --color-wine-200: #f0ccd5;
+  --color-wine-300: #e2a5b4;
+  --color-wine-400: #cf748c;
+  --color-wine-500: #b54767;
+  --color-wine-600: #9b314f;
+  --color-wine-700: #81253d;
+  --color-wine-800: #6c2134;
+  --color-wine-900: #5b1e2e;
+  --color-wine-950: #330b15;
+  
+  --color-rose-gold-50: #fefcfc;
+  --color-rose-gold-100: #fdf6f7;
+  --color-rose-gold-200: #fae4e5;
+  --color-rose-gold-300: #f4c8ca;
+  --color-rose-gold-400: #ea9ea2;
+  --color-rose-gold-500: #dd7176;
+  --color-rose-gold-600: #ca4e54;
+  --color-rose-gold-700: #ab363b;
+  --color-rose-gold-800: #8d2e32;
+  --color-rose-gold-900: #76292b;
+  --color-rose-gold-950: #421113;
+
+  --animate-shimmer: shimmer 2.5s infinite linear;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 4s ease-in-out infinite;
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+/* Custom CSS utilities for premium feel */
+.shimmer-wine {
+  background: linear-gradient(90deg, #dd7176 25%, #f4c8ca 50%, #ca4e54 75%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shimmer-rose-gold {
+  background: linear-gradient(90deg, #df7c8f 25%, #ffd3d8 50%, #b35368 75%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-shimmer-button {
+  background: linear-gradient(135deg, #e05e78 0%, #830e23 50%, #a21a35 100%);
+  background-size: 200% auto;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bg-shimmer-button:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(224, 94, 120, 0.45);
+}
+
+.bg-dark-radial {
+  background-image: radial-gradient(circle at 50% 50%, #20050e 0%, #080206 100%);
+}
+
+.bg-rose-shadow-image {
+  box-shadow: 0 0 50px -10px rgba(131, 14, 35, 0.7);
+}
+
+.glass-card {
+  background: rgba(18, 5, 10, 0.75);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(224, 94, 120, 0.12);
+}
+
+.glow-rose {
+  box-shadow: 0 0 35px -5px rgba(224, 94, 120, 0.35);
+}
+
+.glow-wine {
+  box-shadow: 0 0 45px -8px rgba(131, 14, 35, 0.55);
+}
+
+input[type="range"] {
+  accent-color: #e05e78;
+}
+
+.text-gradient-rose-gold {
+  background: linear-gradient(to right, #ffd3d8, #e0899a, #df7c8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animate-float-slow {
+  animation: var(--animate-float);
+}
+
+/* ========================================================
+   LIGHT THEME CONVERTER LAYER (Clean High-Contrast Style)
+   ======================================================== */
+
+/* Global body overrides to make it lightweight, clean, and elegant */
+body, #main_wrapper {
+  background-color: #fff9fa !important;
+  color: #372124 !important;
+}
+
+/* Sections backgrounds mapping */
+section, header {
+  background-color: #fff9fa !important;
+}
+
+header {
+  background-image: radial-gradient(circle at 50% 50%, #fff0f3 0%, #fff9fa 100%) !important;
+}
+
+/* Change generic background classes */
+.bg-\[\#090306\] {
+  background-color: #fff9fa !important;
+}
+.bg-\[\#120409\] {
+  background-color: #fff0f2 !important;
+}
+.bg-\[\#12050b\] {
+  background-color: #fff0f2 !important;
+}
+.bg-\[\#12050b\]\/30 {
+  background-color: rgba(254, 226, 230, 0.3) !important;
+}
+.bg-\[\#12050b\]\/80 {
+  background-color: rgba(254, 226, 230, 0.8) !important;
+}
+.bg-\[\#1b0610\]\/40 {
+  background-color: #ffffff !important;
+  border-color: #fce7ec !important;
+}
+.bg-\[\#1f0710\] {
+  background-color: #ffe4e8 !important;
+}
+.bg-\[\#050103\] {
+  background-color: #fff0f2 !important;
+}
+.bg-\[\#17050d\] {
+  background-color: #fff0f2 !important;
+}
+.bg-\[\#2a0410\] {
+  background-color: #ffe4e8 !important;
+}
+.bg-rose-950\/10, .bg-rose-950\/15 {
+  background-color: #fff9fa !important;
+}
+.bg-rose-950\/20, .bg-rose-950\/30 {
+  background-color: #fff0f2 !important;
+}
+.bg-rose-950\/40, .bg-rose-950\/50, .bg-rose-950\/60 {
+  background-color: #ffe4e8 !important;
+}
+.bg-\[\#0d0306\]\/98 {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+}
+
+/* Header spotlight blur lights override */
+.absolute.bg-gradient-to-b.from-\[\#4d0b1d\]\/20,
+.absolute.bg-rose-600\/5,
+.absolute.bg-rose-950\/10,
+.absolute.bg-\[\#30050e\]\/30 {
+  background-color: rgba(244, 63, 94, 0.05) !important;
+}
+
+/* Text color transformations for high readability */
+.text-white, .text-slate-100 {
+  color: #27040a !important;
+}
+.text-stone-100 {
+  color: #27040a !important;
+}
+.text-stone-200 {
+  color: #3d2327 !important;
+}
+.text-stone-300 {
+  color: #4f3438 !important;
+}
+.text-stone-400 {
+  color: #6d4b50 !important;
+}
+.text-stone-500 {
+  color: #835e64 !important;
+}
+
+/* Bulletproof color selections matching tailwind class names perfectly */
+[class*="text-[#f2a9b6]"] {
+  color: #db2777 !important; /* Vivid pink-600 */
+}
+[class*="text-[#e2a5b4]"] {
+  color: #be123c !important; /* Deep Rose-700 for stats labels and highlight texts */
+}
+[class*="text-[#f4c8ca]"] {
+  color: #533337 !important; /* Deep readable rose-cocoa for paragraphs */
+}
+[class*="text-[#ffd3d8]"] {
+  color: #e11d48 !important; /* Rose-600 */
+}
+[class*="text-[#e05e78]"] {
+  color: #be123c !important; /* Deep Rose-700 */
+}
+
+.text-\[\#f2a9b6\] {
+  color: #db2777 !important;
+}
+.text-\[\#e2a5b4\] {
+  color: #be123c !important;
+}
+.text-\[\#f4c8ca\] {
+  color: #533337 !important;
+}
+.text-rose-300 {
+  color: #9f1239 !important; /* Rose-800 for readability */
+}
+.text-rose-400 {
+  color: #db2777 !important; /* Pink-600 */
+}
+.text-gradient-rose-gold {
+  background: linear-gradient(135deg, #9f1239 0%, #db2777 50%, #881337 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* ========================================================
+   DARKS PRESERVING LAYER (For Pricing & Checkout Modal)
+   ======================================================== */
+
+#pricing_card, 
+#checkout_modal, 
+#pricing_card *, 
+#checkout_modal * {
+  /* Prevent any global light-mode modifications inside the dark cards */
+}
+
+#pricing_card, 
+div[id="pricing_card"],
+div[id="checkout_modal"],
+#checkout_modal {
+  background: linear-gradient(180deg, #1b050f 0%, #040102 100%) !important;
+  color: #fce8eb !important;
+  border-color: rgba(224, 94, 120, 0.45) !important;
+}
+
+#pricing_card .text-white, 
+#checkout_modal .text-white {
+  color: #ffffff !important;
+}
+
+#pricing_card .text-stone-200, 
+#checkout_modal .text-stone-200 {
+  color: #ffdce1 !important; /* Highly readable glowing light pinkish-grey */
+}
+
+#pricing_card .text-stone-300, 
+#checkout_modal .text-stone-300 {
+  color: #fce8eb !important; /* Bright soft rose-white */
+}
+
+#pricing_card .text-stone-400, 
+#checkout_modal .text-stone-400 {
+  color: #fda4af !important; /* Bright pink rose-300 level */
+}
+
+#pricing_card .text-stone-500, 
+#checkout_modal .text-stone-500 {
+  color: #caa0a6 !important; /* Soft rose muted grey for crossed-out price */
+}
+
+#pricing_card [class*="text-[#f2a9b6]"],
+#checkout_modal [class*="text-[#f2a9b6]"],
+#pricing_card .text-\[\#f2a9b6\],
+#checkout_modal .text-\[\#f2a9b6\] {
+  color: #fda4af !important;
+}
+
+#pricing_card [class*="text-[#e2a5b4]"],
+#checkout_modal [class*="text-[#e2a5b4]"],
+#pricing_card .text-\[\#e2a5b4\],
+#checkout_modal .text-\[\#e2a5b4\] {
+  color: #fecdd3 !important;
+}
+
+#pricing_card [class*="text-[#f4c8ca]"],
+#checkout_modal [class*="text-[#f4c8ca]"],
+#pricing_card .text-\[\#f4c8ca\],
+#checkout_modal .text-\[\#f4c8ca\] {
+  color: #fecdd3 !important;
+}
+
+/* Ensure the gold-rose gradient title looks magnificent on dark backgrounds */
+#pricing_card .text-gradient-rose-gold,
+#pricing_card span.text-gradient-rose-gold,
+.bg-gradient-to-b span.text-gradient-rose-gold {
+  background: linear-gradient(135deg, #ffd3d8 0%, #fda4af 50%, #fb7185 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* CORRECTED ESCAPED SELECTOR for PIX box inside dark pricing card */
+#pix_pricing_box {
+  background-color: #0d0106 !important;
+  border-color: rgba(224, 94, 120, 0.45) !important;
+}
+#pix_pricing_box p,
+#pix_pricing_box strong,
+#pix_pricing_box span {
+  color: #fecdd3 !important; /* Bright rose pink readable on dark background */
+}
+#pix_pricing_box strong {
+  color: #fff !important;
+}
+
+#pricing_card .border-rose-950\/40,
+#checkout_modal .border-rose-950\/40 {
+  border-color: rgba(224, 94, 120, 0.25) !important;
+}
+
+/* Modal Form Controls styling */
+#checkout_modal input,
+#checkout_modal select,
+#checkout_modal textarea {
+  background-color: #1e0711 !important;
+  color: #ffffff !important;
+  border-color: rgba(224, 94, 120, 0.2) !important;
+}
+#checkout_modal input::placeholder {
+  color: #8a737a !important;
+}
+#checkout_modal input:focus {
+  border-color: #fb7185 !important;
+}
+
+/* Badge tags backgrounds & dark pills */
+.bg-\[\#1b0811\]\/90 {
+  background-color: #ffe4e8 !important;
+  border-color: rgba(244, 63, 94, 0.3) !important;
+}
+
+/* Mente Empreendedora and absolute tags inside light bonus cards */
+.bg-rose-950 {
+  background-color: #830e23 !important;
+}
+.bg-rose-950,
+.bg-rose-950 *,
+div.bg-rose-950,
+.absolute.bg-rose-950 {
+  background-color: #830e23 !important;
+  color: #ffffff !important; /* Perfect high-contrast white text */
+}
+
+/* Keep GRAÇA badge extremely legible with custom pink/crimson theme */
+#graca_badge,
+span#graca_badge {
+  background-color: #ffe4e8 !important;
+  color: #9b1231 !important; /* High contrast crimson */
+  border-color: rgba(155, 18, 49, 0.3) !important;
+}
+
+/* For general pages (light themed), but let dark boxes preserve original bright green */
+.text-emerald-400,
+span.text-emerald-400 {
+  color: #047857 !important; /* High contrast emerald-700 for light background */
+}
+
+/* Let dark components keep a bright glowing emerald green */
+#pricing_card .text-emerald-400,
+#pricing_card span.text-emerald-400,
+#checkout_modal .text-emerald-400,
+#checkout_modal span.text-emerald-400,
+#stiky_conversion_bar .text-emerald-400,
+#stiky_conversion_bar span.text-emerald-400 {
+  color: #34d399 !important; /* Bright emerald-400 for dark background */
+}
+
+/* Force excellent white text on official teacher badge and deep crimson pills */
+.bg-\[\#830e23\],
+.bg-\[\#830e23\] *,
+span.bg-\[\#830e23\] {
+  background-color: #830e23 !important;
+  color: #ffffff !important;
+}
+
+/* Specific borders styling to be soft and clean instead of dark plum */
+.border-rose-500\/25, .border-rose-500\/10, .border-rose-500\/30, .border-rose-500\/20 {
+  border-color: rgba(244, 63, 94, 0.2) !important;
+}
+.border-rose-950\/35, .border-rose-950\/30, .border-rose-950\/40, .border-rose-950\/20, .border-rose-950\/65, .border-rose-950 {
+  border-color: #fce1e5 !important;
+}
+.border-rose-700\/25 {
+  border-color: rgba(244, 63, 94, 0.15) !important;
+}
+
+/* Adjust accordion border colors */
+.border-t.border-rose-950\/30 {
+  border-color: #fce1e5 !important;
+}
+
+/* Custom cards background and shadows */
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(244, 63, 94, 0.15) !important;
+  box-shadow: 0 10px 30px -10px rgba(244, 63, 94, 0.08) !important;
+}
+
+/* Shimmer rose gold text/headings to look stunningly pink */
+.shimmer-rose-gold {
+  background: linear-gradient(to right, #db2777, #f43f5e, #db2777) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Button override to vivid strong clean pink/rose */
+.bg-shimmer-button {
+  background: linear-gradient(135deg, #fb7185 0%, #f43f5e 50%, #db2777 100%) !important;
+  color: #ffffff !important;
+}
+.bg-shimmer-button:hover {
+  box-shadow: 0 8px 24px -4px rgba(244, 63, 94, 0.4) !important;
+}
+
+/* Interactive slider adjustments */
+input[type="range"] {
+  background-color: #fee2e6 !important;
+}
+input[type="range"]::-webkit-slider-thumb {
+  background: #f43f5e !important;
+}
+
+/* Author block overlays adjustments */
+.absolute.inset-0.bg-gradient-to-tr.from-\[\#830e23\],
+.absolute.bg-\[\#1b050f\]\/95,
+.absolute.bg-\[\#1b050f\]\/90 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(244, 63, 94, 0.25) !important;
+}
+
+.text-white.font-serif.font-bold {
+  color: #1f050d !important;
+}
+
+/* Glow shadows */
+.glow-wine {
+  box-shadow: 0 10px 40px -10px rgba(244, 63, 94, 0.12) !important;
+}
+.glow-rose {
+  box-shadow: 0 8px 30px -6px rgba(244, 63, 94, 0.18) !important;
+}
+
+/* Footer elements */
+footer#brand_footer, footer {
+  background-color: #faf5f6 !important;
+  border-top-color: #f7d6dc !important;
+}
+
