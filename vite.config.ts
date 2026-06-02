@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/Ana-cecilia-maos-de-fada/',
+    base: '/isacteixeira1991-pixel/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
